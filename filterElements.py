@@ -12,3 +12,22 @@
 # Should return all values lesser than 20 inside the array  => [10]
 # If no match is found return an empty array
 
+def filterElements( arr, criteria, val ):
+    result = []
+    for element in arr:
+        if criteria == "greater" and element > val:
+            result.append( element )
+        elif criteria == "lesser" and element < val:
+            result.append( element )
+        elif criteria == "equal" and element == val:
+            result.append( element )
+        elif criteria == "notEqual" and element != val:
+            result.append( element )
+    return result
+
+nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+val = 0
+
+newarray = filterElements( nums, "lesserOrEqual", val )
+print( newarray )
+
